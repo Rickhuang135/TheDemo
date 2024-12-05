@@ -5,10 +5,19 @@ const props = defineProps({
     scale: {
         type: Number,
         default: 1,
+    },
+    logger: {
+        type: String,
+        default: "testing",
     }
 });
 
-// const dynamicTextSize = ref(14)
+const dynamicTextSize = (relativeSize) =>{
+    console.log("dynamic text size invoked")
+    return {
+        fontSize : props.scale*relativeSize+ "px", 
+    };
+};
 
 
 
@@ -17,6 +26,6 @@ const props = defineProps({
 
 <template>
     <!-- <div :style=""></div> -->
-    <h1>TEsting</h1>
+    <p class="text-wrap h-full" :style="dynamicTextSize(10)" >{{ logger }}</p>
 
 </template>

@@ -14,7 +14,7 @@ const resizeToWidth = ()=>{
 
 <template>
     <div class="flex justify-around
-    flex-row w-full 
+    flex-row w-full h-[10vh]
     lg:flex-col lg:w-[20vw] lg:h-full ">
         <button @click = "barStatus = !barStatus" class="bg-yellow-400">
             Hide sidebar

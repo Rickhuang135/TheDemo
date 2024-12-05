@@ -15,14 +15,21 @@
 </script>
 
 <template>
-    <div class="flex flex-col lg:flex-row">
+    <div class="flex flex-col h-dvh lg:flex-row">
         <sideBar v-if="showSideBar" v-model:barStatus="showSideBar" 
         @resizeToWidth="container.resizeToWidth()"
          @zoomIn="container.zoomInOut(0.1)" 
          @zoomOut="container.zoomInOut(-0.1)"/>
-        <div v-else class="absolute left-0 mt-[20vh] bg-gray-500 z-10" 
+        <div v-else class="
+        absolute top-0 w-full text-center
+        lg:left-0 lg:w-auto lg:mt-[20vh]" 
         @click="showSideBar = true; container.resizeToWidth()"  >
-            <i class="pi pi-angle-double-right text-white text-3xl"></i>
+            <div class="hidden lg:block">
+                <i class="pi pi-angle-double-right text-white text-3xl"></i>
+            </div>
+            <div class="block lg:hidden">
+                <i class="pi pi-angle-double-down text-white text-3xl"></i>
+            </div>
         </div>
         <pageContainer ref="container" />
     </div>
