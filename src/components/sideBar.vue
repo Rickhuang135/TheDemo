@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import { defineModel } from 'vue';
 
 const barStatus = defineModel('barStatus');
 

@@ -1,5 +1,5 @@
 <script setup>
-import {reactive, ref, defineExpose} from 'vue';
+import {reactive, ref} from 'vue';
 import pageComponent from './page.vue';
 import { onMounted, onUnmounted } from 'vue';
 
